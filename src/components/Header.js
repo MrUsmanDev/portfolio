@@ -21,10 +21,9 @@ const Header = () => {
           </svg>
         </button>
       </div>
-     
-       <div className="flex flex-shrink-0 items-center">
-          <img className="h-8 w-auto" src={LOGO_CDN} alt="Mr Usman Dev" />
-        </div>
+      <div className="invisible sm:visible flex-shrink-0 items-center">
+  <img className="h-8 w-auto" src={LOGO_CDN} alt="Mr Usman Dev" />
+</div>
         <SearchHeader />
       <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
         <div className="hidden sm:ml-6 sm:block">
@@ -74,3 +73,5 @@ const Header = () => {
 }
 
 export default Header
+
+

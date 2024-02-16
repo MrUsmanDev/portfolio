@@ -5,6 +5,7 @@ import DynamicHeader from './DynamicHeader'
 import Header from './Header'
 import HeroSection from './HeroSection';
 import TechStack from './TechStack';
+import Projects from './Projects';
 const AppLayout = () => {
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -20,13 +21,13 @@ const AppLayout = () => {
        <div className='flex items-center justify-center h-screen'>
        <Lottie options={loaderOptions} height={300} width={300} />
      </div>
-     
         ):(
             <>
             <DynamicHeader />
             <Header />
             <HeroSection />
             <TechStack />
+            <Projects />
             </>
         )
     }
