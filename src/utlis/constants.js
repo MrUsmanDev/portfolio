@@ -6,6 +6,7 @@ import LoaderData from '../utlis/loader.json';
 import HeroData from '../utlis/herosec.json';
 import LiveChatData from '../utlis/LiveChat.json';
 
+
 import HTML_CDN from './html.png';
 import CSS_CDN from './css.png';
 import JS_CDN from './js logo.png';
@@ -146,7 +147,7 @@ export const youtubeOptions = {
     {
       id:1, 
       Organization: 'Lasting Sales, Lahore',
-      Position:'Front End Developer',
+      Position:'Senior Front End Developer',
       mode: 'Remote',
       Date : 'DEC 2022 - Present'
     }, 
@@ -187,3 +188,31 @@ export const youtubeOptions = {
     }
 
   ]
+
+
+export const downloadFile=(url)=> {
+    const fileName = url.substring(url.lastIndexOf('/') + 1);
+    const fileExtension = fileName.split('.').pop().toLowerCase();
+    const contentTypeMap = {
+        'png': 'image/png',
+        'jpg': 'image/jpeg',
+        'jpeg': 'image/jpeg',
+        'web': 'image/webp',
+        'pdf': 'application/pdf',
+        'docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    };
+    fetch(url)
+        .then(response => response.blob())
+        .then(blob => {
+            const url = window.URL.createObjectURL(new Blob([blob], { type: contentTypeMap[fileExtension] }));
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        })
+        .catch(error => console.error('Error downloading file:', error));
+}

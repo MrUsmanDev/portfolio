@@ -1,10 +1,11 @@
 import React from 'react';
 import Lottie from 'react-lottie';
 import { HeroOptions } from '../utlis/constants';
-
+import RESUME_URL from '../utlis/resume.pdf'
+import { downloadFile } from '../utlis/constants';
 const HeroSection = () => {
   return (
-    <div className="bg-gray-900 text-white py-16" id='home'>
+    <div className="bg-gray-900 text-white py-16 section" id='home'>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col-reverse sm:flex-row items-center justify-between">
         <div className="w-full sm:w-2/3 pr-4 sm:pr-8">
           <h1 className="text-5xl sm:text-5xl font-extrabold leading-tight mb-4">
@@ -24,12 +25,12 @@ const HeroSection = () => {
             >
               Learn React Under the Hood
             </a>
-            <a
-              href="#download-resume"
+            <button
+             onClick={()=> downloadFile(RESUME_URL)}
               className="inline-block bg-skyblue-500 text-white py-2 px-6 rounded-full text-lg font-semibold border-2 border-white transition duration-300 hover:bg-gray-700 hover:text-white hover:border-transparent hover:shadow-lg"
             >
               Download Resume
-            </a>
+            </button>
           </div>
         </div>
         <div className="w-full sm:w-1/3 mt-8 sm:mt-0 order-first sm:order-none">
