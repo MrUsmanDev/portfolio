@@ -6,6 +6,9 @@ import Header from './Header'
 import HeroSection from './HeroSection';
 import TechStack from './TechStack';
 import Projects from './Projects';
+import LiveChatButton from './LiveChatButton';
+import About from './About';
+import Footer from './Footer';
 const AppLayout = () => {
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -28,6 +31,9 @@ const AppLayout = () => {
             <HeroSection />
             <TechStack />
             <Projects />
+            <LiveChatButton />
+            <About />
+            <Footer />
             </>
         )
     }

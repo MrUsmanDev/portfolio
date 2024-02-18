@@ -4,7 +4,7 @@ import { HeroOptions } from '../utlis/constants';
 
 const HeroSection = () => {
   return (
-    <div className="bg-gray-900 text-white py-16">
+    <div className="bg-gray-900 text-white py-16" id='home'>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col-reverse sm:flex-row items-center justify-between">
         <div className="w-full sm:w-2/3 pr-4 sm:pr-8">
           <h1 className="text-5xl sm:text-5xl font-extrabold leading-tight mb-4">
